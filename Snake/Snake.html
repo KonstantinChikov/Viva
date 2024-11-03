@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                <title>Snake Game</title>
+                
+        <link rel="stylesheet" href="GameStyle.css">
+        <script src="game.js" defer type="module"></script>
+    </head>
+
+    <body>
+            <div id="game-board"> </div>
+
+            
+            <div class="score-wrapper">
+
+                <div id="Score"> </div>
+
+                <h3 id="Toptext">Use arrow keys to play</h3>
+                <button onclick=" window.location.reload();" id="refreshButton"> New Game </button>
+                <button id="refreshButton"  onclick="window.location.href='../index.html'"> Main Menu </button>
+
+                
+                <h2 id="level">Difficulty Level</h2>
+
+                <select id="difficulty-select">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <div id="popup">
+                    <h1 id="txt">! You Lost !</h1>
+                </div>
+                
+            </div>
+    </body>   
+
+</html>

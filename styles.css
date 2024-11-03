@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, orange, #10b5d9);
+    background-repeat: no-repeat;
+    cursor: url('./Images/cursor.png'), default;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    position: relative;
+
+}
+
+.icon-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    cursor: url('./Images/cursor.png'), default;
+}
+
+.icon-container:first-child {
+    left: 20px;
+}
+
+.icon-container:last-child {
+    right: 20px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    cursor: url('./Images/cursor.png'), default;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.grid-item {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: #03323e solid 7.5px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: center;
+    padding: 20px;
+    margin: 50px;
+    cursor: url('./Images/cursor.png'), default;
+}
+
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.game:hover {
+    transform: scale(1.05);
+    cursor: url('./Images/cursor.png'), default;
+}
+
