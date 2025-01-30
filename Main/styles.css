@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom right, orange, #10b5d9);
+    background: linear-gradient(orange, #10b5d9);
     background-repeat: no-repeat;
     cursor: url('../Images/cursor.png'), default;
 }
@@ -13,14 +13,13 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     position: relative;
-
 }
 
 .icon-container {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    cursor: pointer;
+    /* cursor: pointer; */
     cursor: url('../Images/cursor.png'), default;
 }
 
@@ -32,7 +31,12 @@ body {
     right: 20px;
 }
 
-.icon {
+.iconS {
+    width: 65px;
+    height: 65px;
+    cursor: url('../Images/clickHover.png'), default;
+}
+.iconP {
     width: 50px;
     height: 50px;
     cursor: url('../Images/cursor.png'), default;
@@ -71,6 +75,6 @@ h1 {
 
 .grid-item:hover {
     transform: scale(1.10);
-    cursor: url('../Images/cursor.png'), default;
+    cursor: url('../Images/clickHover.png'), default;
 }
 
