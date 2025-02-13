@@ -20,7 +20,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    /* cursor: pointer; */
+    cursor: pointer;
     cursor: url('../Images/cursor.png'), default;
 }
 
