@@ -83,6 +83,7 @@ body {
     margin-bottom: 45px;
     cursor: pointer;
     outline: none;
+    font-size: 17px;
 }
 
 #refreshButton:hover{

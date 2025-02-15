@@ -111,7 +111,11 @@ const generateWord = (optionValue) => {
   chosenWord = optionArray[Math.floor(Math.random() * optionArray.length)];
   chosenWord = chosenWord.toUpperCase();
 
-  let displayItem = chosenWord.replace(/./g, '<span class="dashes">_</span>');
+  // let displayItem = chosenWord.replace(/./g, '<span class="dashes">_</span>');
+  let displayItem = chosenWord
+  .split("")
+  .map(() => '<span class="dashes">_</span>')
+  .join(" "); // Adding space between underscores
 
   userInputSection.innerHTML = displayItem;
 };

@@ -55,9 +55,13 @@ body {
   transition: 0.2s all linear;
 }
 .options button:hover {
-  background-color: darkcyan;
-  border: 1px solid darkcyan;
+  color: #2d2a3d;
+  background-color: #fff;
+  border: 6px solid #2d2a3d;
+  border-radius: 10px;
 }
+
+
 @keyframes shakeComputer {
   0% {
     transform: rotate(-30deg);

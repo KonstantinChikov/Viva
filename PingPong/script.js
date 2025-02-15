@@ -16,24 +16,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const paddleSpeed = 52;
 
+
+    let lastLoser = "right";
     function resetBall() {
         ballX = 300;
-        ballY = 100;
-        ballSpeedX = 4;
-        ballSpeedY = 4;
+    ballY = 200;
+
+    // Reverse ball direction based on the last loser
+    ballSpeedX = lastLoser === "left" ? 4 : -4;
+    ballSpeedY = Math.random() < 0.5 ? 4 : -4; // Randomize Y direction
     }
 
     function update() {
-        // Update ball position
+
         ballX += ballSpeedX;
         ballY += ballSpeedY;
 
-        // Check collision with walls
         if (ballY < 0 || ballY > 380) {
             ballSpeedY = -ballSpeedY;
         }
 
-        // Check collision with paddles
         if (
             (ballX < 30 && ballY > leftPaddleY && ballY < leftPaddleY + 80) ||
             (ballX > 550 && ballY > rightPaddleY && ballY < rightPaddleY + 80)
@@ -41,23 +43,21 @@ document.addEventListener("DOMContentLoaded", function () {
             ballSpeedX = -ballSpeedX;
         }
 
-        // Check if the ball goes out on the left
         if (ballX < 0) {
             rightScore++;
+            lastLoser = "right"; // Track last losing player
             resetBall();
         }
 
-        // Check if the ball goes out on the right
         if (ballX > 600) {
             leftScore++;
+            lastLoser = "left"; // Track last losing player
             resetBall();
         }
 
-        // Update ball position
         ball.style.left = ballX + "px";
         ball.style.top = ballY + "px";
 
-        // Update paddle position
         leftPaddle.style.top = leftPaddleY + "px";
         rightPaddle.style.top = rightPaddleY + "px";
 
@@ -66,21 +66,40 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("rightScore").innerText = rightScore;
     }
 
+    // function handleKeyDown(event) {
+    //     switch (event.key) {
+    //         case "ArrowUp":
+    //             rightPaddleY -= paddleSpeed;
+    //             break;
+    //         case "ArrowDown":
+    //             rightPaddleY += paddleSpeed;
+    //             break;
+    //         case "w":
+    //             leftPaddleY -= paddleSpeed;
+    //             break;
+    //         case "s":
+    //             leftPaddleY += paddleSpeed;
+    //             break;
+    //     }
+    // }
     function handleKeyDown(event) {
         switch (event.key) {
             case "ArrowUp":
-                rightPaddleY -= paddleSpeed;
+                rightPaddleY = Math.max(0, rightPaddleY - paddleSpeed);
                 break;
             case "ArrowDown":
-                rightPaddleY += paddleSpeed;
+                rightPaddleY = Math.min(320, rightPaddleY + paddleSpeed);
                 break;
             case "w":
-                leftPaddleY -= paddleSpeed;
+            case "W":
+                leftPaddleY = Math.max(0, leftPaddleY - paddleSpeed);
                 break;
             case "s":
-                leftPaddleY += paddleSpeed;
+            case "S":
+                leftPaddleY = Math.min(320, leftPaddleY + paddleSpeed);
                 break;
         }
+        event.preventDefault(); //This stops unwanted scrolling
     }
 
     document.addEventListener("keydown", handleKeyDown);
