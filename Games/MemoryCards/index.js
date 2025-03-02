@@ -1,4 +1,4 @@
-import { saveScore, CURRENT_USER } from "../../MainPage/scripts.js/util.js";
+import { saveScore, CURRENT_USER } from "../../MainPage/scripts/util.js";
 
 const gridContainer = document.querySelector(".grid-container");
 let cards = [];

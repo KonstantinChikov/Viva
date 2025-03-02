@@ -1,4 +1,4 @@
-import { logout } from "../MainPage/scripts.js/util.js";
+import { logout } from "../MainPage/scripts/util.js";
 
 document.querySelector('#LogOutBtn').onclick = () => {
     logout();

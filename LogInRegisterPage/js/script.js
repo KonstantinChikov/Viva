@@ -1,4 +1,4 @@
-import { existsByEmail, existsByUsername, login, register } from "../../MainPage/scripts.js/util.js";
+import { existsByEmail, existsByUsername, login, register } from "../../MainPage/scripts/util.js";
 
 const loginForm = document.querySelector(".login-form");
 const registerForm = document.querySelector(".register-form");
