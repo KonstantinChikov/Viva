@@ -25,7 +25,7 @@ export async function login(email, password) {
 }
 
 export function isLoggedIn() {
-    return localStorage.getItem(CURRENT_USER) !== null;
+    return localStorage.getItem(CURRENT_USER) !== 'null';
 }
 
 export function logout() {
