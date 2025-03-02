@@ -1,3 +1,5 @@
+import { CURRENT_USER, saveScore } from '../../MainPage/scripts/util.js'
+
 //board
 let board;
 let boardWidth = 500;
@@ -69,6 +71,7 @@ function update() {
     requestAnimationFrame(update);
     //stop drawing
     if (gameOver) {
+        saveScore(localStorage.getItem(CURRENT_USER), 'breakout', score);
         return;
     }
     context.clearRect(0, 0, board.width, board.height);
