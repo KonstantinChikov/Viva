@@ -16,6 +16,7 @@
                 <div class="title-register">Register</div>
             </div>
         </div>
+
         <!-- LOGIN FORM -->
         <form action="#" class="login-form" autocomplete="off">
             <div class="input-box">
@@ -23,11 +24,13 @@
                 <label for="log-email" class="label">Email</label>
                 <i class='bx bx-envelope icon'></i>
             </div>
+
             <div class="input-box">
                 <input type="password" class="input-field" id="log-pass" required>
                 <label for="log-pass" class="label">Password</label>
                 <i class='bx bx-lock-alt icon' ></i>
             </div>
+            
             <div class="form-cols">
                 <div class="col-1"></div>
                 <div class="col-2">
@@ -38,29 +41,37 @@
                 <button class="btn-submit" id="SignInBtn">Sign In <i class='bx bx-log-in' ></i></button>
             </div>
             <div class="switch-form">
-                <span>Don't have an account? <a href="#" onclick="registerFunction()">Register</a></span>
+                <span>Don't have an account? <a href="#" id="to-register">Register</a></span>
             </div>
+
+            <p class="error-msg" id="login-error"></p>
         </form>
 
         <!-- REGISTER FORM -->
         <form action="#" class="register-form" autocomplete="off">
-            <div class="input-box">
+            <div class="input-box" style="margin-bottom: 0;">
                 <input type="text" class="input-field" id="reg-name" required>
                 <label for="reg-name" class="label">Username</label>
                 <i class='bx bx-user icon' ></i>
             </div>
+            <p class="error-msg d-none" id="username-register"></p>
+            
             <div class="input-box">
                 <input type="text" class="input-field" id="reg-email" required>
                 <label for="reg-email" class="label">Email</label>
                 <i class='bx bx-envelope icon'></i>
             </div>
+            <p class="error-msg d-none" id="email-register"></p>
+            
             <div class="input-box">
                 <input type="password" class="input-field" id="reg-pass" required>
                 <label for="reg-pass" class="label">Password</label>
                 <i class='bx bx-lock-alt icon' ></i>
             </div>
+            <p class="error-msg d-none" id="password-register"></p>
+
             <div class="form-cols">
-                <div class="col-1">
+                <div class="col-1" id="toc-wrapper">
                     <input type="checkbox" id="agree">
                     <label for="agree"> I agree to terms & conditions</label>
                 </div>
@@ -70,11 +81,11 @@
                 <button class="btn-submit" id="SignUpBtn">Sign Up <i class='bx bx-user-plus' ></i></button>
             </div>
             <div class="switch-form">
-                <span>Already have an account? <a href="#" onclick="loginFunction()">Login</a></span>
+                <span>Already have an account? <a href="#" id="to-login">Login</a></span>
             </div>
         </form>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" type="module" defer></script>
 </body>
 </html>

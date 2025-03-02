@@ -104,6 +104,7 @@ body{
     display: flex;
     flex-direction: column;
     margin: 20px 0;
+    margin-bottom: 0;
 }
 .input-field{
     width: 100%;
@@ -186,7 +187,23 @@ body{
 .switch-form a{
     font-weight: 500;
 }
-
+.error-msg {
+    margin-left: 15px;
+    margin-bottom: 20px;
+    color: crimson;
+}
+.d-none {
+    display: none;
+}
+.d-block {
+    display: block;
+}
+#toc-wrapper {
+    margin-top: 20px;
+}
+#login-error {
+    text-align: center;
+}
 
 @media only screen and (max-width: 564px){
     .wrapper{
