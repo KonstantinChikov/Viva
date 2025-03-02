@@ -1,3 +1,5 @@
+import { saveScore, CURRENT_USER } from "../../MainPage/scripts/util.js";
+
 const letterContainer = document.getElementById("letter-container");
 const optionsContainer = document.getElementById("options-container");
 const userInputSection = document.getElementById("user-input-section");
@@ -68,8 +70,13 @@ let options = {
   ],
 };
 
+document.getElementById('main-menu-btn').onclick = () => {
+  window.location.href='../../MainPage/Index.html';
+}
+
 let winCount = 0;
 let count = 0;
+let score = 0;
 
 let chosenWord = "";
 
@@ -77,7 +84,12 @@ const displayOptions = () => {
   optionsContainer.innerHTML += `<h3>Please Select An Option</h3>`;
   let buttonCon = document.createElement("div");
   for (let value in options) {
-    buttonCon.innerHTML += `<button class="options" onclick="generateWord('${value}')">${value}</button>`;
+    // buttonCon.innerHTML += `<button class="options">${value}</button>`;
+    const btn = document.createElement('button');
+    btn.classList.add('options');
+    btn.onclick = () => generateWord(value);
+    buttonCon.appendChild(btn);
+    btn.textContent = value;
   }
   optionsContainer.appendChild(buttonCon);
 };
@@ -122,6 +134,8 @@ const generateWord = (optionValue) => {
 
 const initializer = () => {
   winCount = 0;
+  console.log(score);
+  
   count = 0;
 
   userInputSection.innerHTML = "";
@@ -144,6 +158,8 @@ const initializer = () => {
             winCount += 1;
             if (winCount == charArray.length) {
               resultText.innerHTML = `<h2 class='win-msg'>You Win!!</h2><p>The word was <span>${chosenWord}</span></p>`;
+              score++;
+              saveScore(localStorage.getItem(CURRENT_USER), 'hangman', score);
               blocker();
             }
           }
