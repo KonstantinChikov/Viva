@@ -67,6 +67,7 @@ h1 {
     padding: 20px;
     margin: 50px;
     cursor: url('../Images/cursor.png'), default;
+    font-family: "Arvo", cursive;
 }
 
 .grid-item img {

@@ -177,6 +177,7 @@ body{
 }
 .btn-submit:hover{
     gap: 15px;
+    cursor: url('../Images/clickHover.png'), default;
 }
 .btn-submit i{
     font-size: 20px;

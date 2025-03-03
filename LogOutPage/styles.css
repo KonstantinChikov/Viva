@@ -15,6 +15,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    /* cursor: url('../Images/cursor.png'), default; */
+
 }
 a{
     text-decoration: none;
@@ -173,9 +175,12 @@ body{
     border-radius: 30px;
     cursor: pointer;
     transition: var(--transition-3s);
+    margin-top: 15px;
 }
 .btn-submit:hover{
     gap: 15px;
+    cursor: url('../Images/clickHover.png'), default;
+
 }
 .btn-submit i{
     font-size: 20px;
