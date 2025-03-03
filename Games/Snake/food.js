@@ -33,4 +33,4 @@ function getRandomFoodPosition() {
   return newFoodPosition;
 }
 
-// export{ EXPANSION_RATE };
+export{ score }

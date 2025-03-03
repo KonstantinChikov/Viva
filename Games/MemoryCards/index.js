@@ -1,3 +1,5 @@
+import { saveScore, CURRENT_USER } from "../../MainPage/scripts/util.js";
+
 const gridContainer = document.querySelector(".grid-container");
 let cards = [];
 let firstCard, secondCard;
@@ -5,6 +7,7 @@ let lockBoard = false;
 let score = 0;
 
 document.querySelector(".score").textContent = score;
+document.querySelector('#restart-btn').onclick = restart;
 
 fetch("./data/cards.json")
   .then((res) => res.json())
@@ -27,6 +30,7 @@ function shuffleCards() {
   }
 }
 
+const cardElements = [];
 function generateCards() {
   for (let card of cards) {
     const cardElement = document.createElement("div");
@@ -40,6 +44,8 @@ function generateCards() {
     `;
     gridContainer.appendChild(cardElement);
     cardElement.addEventListener("click", flipCard);
+
+    cardElements.push(cardElement);
   }
 }
 
@@ -60,6 +66,10 @@ function flipCard() {
   lockBoard = true;
 
   checkForMatch();
+
+  if (cardElements.every(c => c.classList.contains('flipped'))) {
+    saveScore(localStorage.getItem(CURRENT_USER), 'memory-cards', score);
+  }
 }
 
 function checkForMatch() {

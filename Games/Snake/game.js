@@ -1,6 +1,7 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection } from './snake.js'
-import { update as updateFood, draw as drawFood } from './food.js'
+import { update as updateFood, draw as drawFood, score } from './food.js'
 import { outsideGrid } from './grid.js'
+import { CURRENT_USER, saveScore } from '../../MainPage/scripts/util.js'
 
 let lastRenderTime = 0;
 let gameOver = false;
@@ -10,7 +11,8 @@ const popup = document.getElementById('popup');
 
 function main(currentTime) {
   if (gameOver) {
-      showPopup();
+    showPopup();
+    saveScore(localStorage.getItem(CURRENT_USER), 'snake', score);
     return;
   }
 
