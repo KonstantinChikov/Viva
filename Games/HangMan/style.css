@@ -118,17 +118,17 @@ canvas {
   color: #fe5152;
 }
 .home{
-  margin-top: 600px;
+  margin-top: 40%;
   margin-left: 660px;
   margin-right: 660px;
   padding: 4.6em 1.2em;
 }
 
-/* button{
+button{
   border: 3px solid #000000;
   background-color: #ffffff;
   color: #000000;
   border-radius: 0.3em;
   text-transform: capitalize;
   cursor: pointer;
-} */
+}
