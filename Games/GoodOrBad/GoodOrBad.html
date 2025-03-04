@@ -6,7 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../Images/joystick.png" type="image/png">
         <link rel="stylesheet" href="style.css">
-        <title>Игра с благородници и негодници</title>
+        <link rel="icon" href="../../Images/goodORbad.png" type="image/png">
+
+        <title>Noble and Scoundrel</title>
 
              <!-- Sound effects -->
             <audio id="correctSound" src="Sounds/Correct.mp3"></audio>
@@ -14,56 +16,56 @@
     </head>
 
     <body>
-        <h1>Игра с благородници и негодници</h1>
+        <h1>The Noble and Scoundrel island</h1>
 
         <p id="con">   
-            На острова на благородниците и негодниците са верни следните факти:
-            1. Благородникът винаги казва истината.
-            2. Негодникът винаги казва лъжа.
-            3. Всеки жител на острова е или благородник, или негодник.
-            Вие попадате на този остров и срещате трима участници A, B, C 
+            On the island of nobles and scoundrels, the following facts are true:
+            1. The noble always tells the truth.
+            2. The scoundrel always tells a lie.
+            3. Every inhabitant of the island is either a noble or a scoundrel.
+            You land on this island and meet three people: Atlas, Basil and Crystal
         </p>
 
-        <p id="replace-me">Питате A: "Ти благородник ли си или негодник?"</p>
+        <p id="replace-me">Ask A: "Are you a Noble or a Scoundrel?"</p>
         
-        <button id="askA" onclick="changeTextOne()">Попитай A</button>
-        <button id="askB" onclick="changeTextTwo()">Попитай B</button>
-        <button id="askC" onclick="changeTextThree()">Попитай C</button>
-        <button id="revealAnswer">Разкрий отговора</button>
+        <button id="askA" onclick="changeTextOne()">Ask Atlas</button>
+        <button id="askB" onclick="changeTextTwo()">Ask Basil</button>
+        <button id="askC" onclick="changeTextThree()">Ask Crystal</button>
+        <button id="revealAnswer">Give Answer</button>
 
         <div id="tryA">
-            <label >Какъв е A:</label>
+            <label >What is Atlas:</label>
             <input 
                 type="text" 
                 id="txtFieldA" 
                 required maxlength="20"
                 size="25"
             >
-            <button id="check" onclick="checkStringA()">Провери</button>
+            <button id="check" onclick="checkStringA()">Check</button>
             <p id="resultA"></p>
         </div> 
 
         <div id="tryB">
-            <label >Какъв е B:</label>
+            <label >What is Basil:</label>
             <input 
                 type="text" 
                 id="txtFieldB" 
                 required maxlength="20"
                 size="25"
             >
-            <button id="check" onclick="checkStringB()">Провери</button>
+            <button id="check" onclick="checkStringB()">Check</button>
             <p id="resultB"></p>
         </div> 
 
         <div id="tryC">
-            <label >Какъв е C:</label>
+            <label >What is Crystal:</label>
             <input 
                 type="text" 
                 id="txtFieldC" 
                 required maxlength="20"
                 size="25"
             >
-            <button id="check" onclick="checkStringC()">Провери</button>
+            <button id="check" onclick="checkStringC()">Check</button>
             <p id="resultC"></p>
         </div> 
 
