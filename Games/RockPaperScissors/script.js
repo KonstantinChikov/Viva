@@ -1,3 +1,5 @@
+import { CURRENT_USER, saveScore } from "../../MainPage/scripts/util.js"
+
 const computer = document.querySelector(".computer img");
 const player = document.querySelector(".player img");
 const computerPoints = document.querySelector(".computerPoints");
@@ -22,6 +24,8 @@ options.forEach((option) => {
 
       let cPoints = parseInt(computerPoints.innerHTML);
       let pPoints = parseInt(playerPoints.innerHTML);
+      let score = pPoints;
+      saveScore(localStorage.getItem(CURRENT_USER), 'rock-paper-scissors', score+1);
 
       if (option.innerHTML === "STONE") {
         if (computerChoice === "PAPER")

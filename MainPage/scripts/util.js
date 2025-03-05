@@ -2,7 +2,7 @@ const CURRENT_USER = 'current-user';
 
 export async function register(email, username, password) {
     const hashedPass = await hashPassword(password);
-    localStorage.setItem(email, JSON.stringify({email: email, username: username, password: hashedPass}));
+    localStorage.setItem(email, JSON.stringify({ email: email, username: username, password: hashedPass }));
     localStorage.setItem(CURRENT_USER, email);
 }
 
@@ -13,9 +13,9 @@ export async function login(email, password) {
 
     const user = JSON.parse(localStorage.getItem(email));
     const userPassword = user['password'];
-    
+
     const isVerified = await verifyPassword(password, userPassword);
-    
+
     if (!isVerified) {
         return false;
     }
@@ -40,8 +40,14 @@ export function saveScore(email, game, score) {
     }
 
     const savedUserScores = JSON.parse(localStorage.getItem(email));
-    const newSavedScores = { ...savedUserScores, [game]: score };
-    localStorage.setItem(email, JSON.stringify(newSavedScores));
+    if (savedUserScores.hasOwnProperty(game)) {
+        if (savedUserScores[game] < score) {
+            savedUserScores[game] = score;
+        }
+    } else {
+        savedUserScores[game] = score;
+    }
+    localStorage.setItem(email, JSON.stringify(savedUserScores));
 }
 
 export function existsByEmail(email) {
@@ -71,7 +77,7 @@ async function hashPassword(password) {
     const encoder = new TextEncoder();
     const data = encoder.encode(password);
     const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-    
+
     // Convert hash to hex string
     return Array.from(new Uint8Array(hashBuffer))
         .map(byte => byte.toString(16).padStart(2, "0"))

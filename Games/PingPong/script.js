@@ -5,14 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let ballX = 300;
     let ballY = 200;
-    let ballSpeedX = 4;
-    let ballSpeedY = 4;
+    let ballSpeedX = 2;
+    let ballSpeedY = 2;
 
     let leftPaddleY = 160;
     let rightPaddleY = 160;
 
     let leftScore = 0;
-    let rightScore = 0;
+    let rightScore = 0; // player score in the score table
 
     const paddleSpeed = 52;
 
@@ -22,9 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
         ballX = 300;
     ballY = 200;
 
-    // Reverse ball direction based on the last loser
-    ballSpeedX = lastLoser === "left" ? 4 : -4;
-    ballSpeedY = Math.random() < 0.5 ? 4 : -4; // Randomize Y direction
+
+    ballSpeedX = lastLoser === "left" ? 3 : -3;    // Reverse ball direction based on the last loser. If "right" the ball will respawn to who last scored a poin, "left" the ball will respawn to who last lost a point
+    ballSpeedY = Math.random() < 0.5 ? 3 : -3;      // Randomize Y direction
+
+    if(ballSpeedX >= 4 || ballSpeedY >= 4){
+        ballSpeedX--
+        ballSpeedY--
+    }
+
     }
 
     function update() {
@@ -45,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (ballX < 0) {
             rightScore++;
+            // saveScore(localStorage.getItem(CURRENT_USER), 'ping-pong', rightScore);
             lastLoser = "right"; // Track last losing player
             resetBall();
         }

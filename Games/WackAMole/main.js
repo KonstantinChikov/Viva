@@ -1,3 +1,5 @@
+import { CURRENT_USER, saveScore } from "../../MainPage/scripts/util.js"
+
 const cursor = document.querySelector('.cursor')
 const holes = [...document.querySelectorAll('.hole')]
 const scoreEl = document.querySelector('.score span')
@@ -16,6 +18,7 @@ function run(){
 
     img.addEventListener('click', () => {
         score += 10
+        saveScore(localStorage.getItem(CURRENT_USER), 'wack-a-mole', score);
         sound.play()
         scoreEl.textContent = score
         img.src = 'assets/mole-whacked.png'

@@ -40,7 +40,7 @@ body {
 .iconP {
     width: 50px;
     height: 50px;
-    cursor: url('../Images/cursor.png'), default;
+    cursor: url('../Images/clickHover.png'), default;
 }
 
 h1 {

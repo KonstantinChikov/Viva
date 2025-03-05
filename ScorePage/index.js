@@ -36,6 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
         temp.textContent = playerInfo['snake'];
         tr.appendChild(temp);
 
+        temp = document.createElement('td');
+        temp.textContent = playerInfo['rock-paper-scissors'];
+        tr.appendChild(temp);
+
+        temp = document.createElement('td');
+        temp.textContent = playerInfo['wack-a-mole'];
+        tr.appendChild(temp);
+
+        temp = document.createElement('td');
+        temp.textContent = playerInfo['jigsaw'];
+        tr.appendChild(temp);
+
         tbody.appendChild(tr);
     })
 })

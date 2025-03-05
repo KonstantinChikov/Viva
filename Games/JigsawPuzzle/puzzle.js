@@ -1,3 +1,5 @@
+import { CURRENT_USER, saveScore } from "../../MainPage/scripts/util.js"
+
 var rows = 5;
 var columns = 5;
 
@@ -89,4 +91,6 @@ function dragEnd() {
 
     turns += 1;
     document.getElementById("turns").innerText = turns;
+    let score = turns;
+    saveScore(localStorage.getItem(CURRENT_USER), 'jigsaw', score);
 }
