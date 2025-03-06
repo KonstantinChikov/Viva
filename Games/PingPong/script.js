@@ -1,3 +1,5 @@
+import { CURRENT_USER, saveScore } from "../../MainPage/scripts/util.js"
+
 document.addEventListener("DOMContentLoaded", function () {
     const ball = document.querySelector(".ball");
     const leftPaddle = document.getElementById("leftPaddle");
@@ -51,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (ballX < 0) {
             rightScore++;
-            // saveScore(localStorage.getItem(CURRENT_USER), 'ping-pong', rightScore);
+            saveScore(localStorage.getItem(CURRENT_USER), 'ping-pong', rightScore);
             lastLoser = "right"; // Track last losing player
             resetBall();
         }
