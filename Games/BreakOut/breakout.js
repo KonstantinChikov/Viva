@@ -7,9 +7,9 @@ let boardHeight = 500;
 let context;
 
 // Player dimensions and velocity
-let playerWidth = 900;
+let playerWidth = 90;
 let playerHeight = 15;
-let playerVelocityX = 30; // pixels per button click
+let playerVelocityX = 35; // pixels per button click
 
 let player = {
     x: boardWidth / 2 - playerWidth / 2,
@@ -50,7 +50,7 @@ let blockY = 45;
 // Score and game state
 let score = 0;
 let gameOver = false;
-let level = 3; 
+let level = 1; 
 
 window.onload = function() {
     board = document.getElementById("board");
@@ -138,32 +138,15 @@ function update() {
         }
     }
 
-    console.log("Current blockCount:", blockCount);
     // Check if all blocks are cleared (next level)
     if (blockCount == 0) {
-        console.log("bite bite")  
         score += 100 * blockRows * blockColumns; // Bonus points for clearing the level
         level++;
-        //level = Math.min(level, 3); // Limit level to 3
-
-        // Bugs to Clear
-
-        // TO DO: (level 1 > level 2)No ball is drawn after level one.                   Done!
-
-        // TO DO: (level 2 > level 3)The game makes you win prematurely after level 2.   Done!
-
-        // TO DO: (level 3 > end)    The game over sequence works if there is only one block on the board (during quick testing), 
-        // in case of a standart game with many blocks it won't bite and will go infinite.
-        // The problem is due to making some of the blocks invisible to make the pattern (this could be fould on line 250), 
-        // they are still counted in blockCount, but they never could be seen or brocken.
-        // This means blockCount never reaches 0 and never entering the if (the same if these commets are in). 
-        // On line 141 there is a console block counter that made the bug visible.
 
         if (level > 3) {
             gameOver = true;
             saveScore(localStorage.getItem(CURRENT_USER), 'breakout', score);
-            // console.log("bite bite")
-            context.fillText("You Won: Press 'Space' to Restart", 80, 400);
+            context.fillText("YOU WON: Press 'Space' to start a new game", 50, 400);
             return;
         }
         
@@ -187,19 +170,19 @@ function movePlayer(e) {
     }
     if (e.code == "ArrowLeft") {
         let nextPlayerX = player.x - player.velocityX;
-        if (!outOfBounds(nextPlayerX)) {
+        if (!outOfBounds(nextPlayerX +10)) {
             player.x = nextPlayerX;
         }
     } else if (e.code == "ArrowRight") {
         let nextPlayerX = player.x + player.velocityX;
-        if (!outOfBounds(nextPlayerX)) {
+        if (!outOfBounds(nextPlayerX -10)) {
             player.x = nextPlayerX;
         }
     }
 }
 
 function outOfBounds(xPosition) {
-    return xPosition < 0 || xPosition + playerWidth > boardWidth;
+    return xPosition < 0 || xPosition + playerWidth >= boardWidth;
 }
 
 function detectCollision(a, b) {
@@ -262,7 +245,8 @@ function createBlocks() {
         }
     }
 
-    blockCount = blockArray.length;
+    // blockCount = blockArray.length;
+    blockCount = blockArray.filter(b => !b.break).length
 
     ball = {
         x: boardWidth / 2,
@@ -276,6 +260,9 @@ function createBlocks() {
 
 function resetGame() {
     gameOver = false;
+    score = 0;
+    level = 1; // Reset level to 1
+
     player = {
         x: boardWidth / 2 - playerWidth / 2,
         y: boardHeight - playerHeight - 5,
@@ -283,18 +270,7 @@ function resetGame() {
         height: playerHeight,
         velocityX: playerVelocityX
     };
-    // ball = {
-    //     x: boardWidth / 2,
-    //     y: boardHeight / 2,
-    //     width: ballWidth,
-    //     height: ballHeight,
-    //     velocityX: ballVelocityX = 2,
-    //     velocityY: ballVelocityY = 2
-    // };
-    // blockArray = [];
-    // blockRows = 3;
-    score = 0;
-    level = 1; // Reset level to 1
+
     createBlocks();
 }
 
