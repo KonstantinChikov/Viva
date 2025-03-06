@@ -7,7 +7,7 @@ let boardHeight = 500;
 let context;
 
 // Player dimensions and velocity
-let playerWidth = 90;
+let playerWidth = 900;
 let playerHeight = 15;
 let playerVelocityX = 30; // pixels per button click
 
@@ -40,7 +40,7 @@ let blockWidth = 50;
 let blockHeight = 15;
 let blockColumns = 8;
 let blockRows = 3;
-let blockMaxRows = 10; // Limit the number of rows
+let blockMaxRows = 10; // Limit the number of rows (unused)
 let blockCount = 0;
 
 // Block starting position
@@ -65,7 +65,7 @@ window.onload = function() {
     requestAnimationFrame(update);
     document.addEventListener("keydown", movePlayer);
 
-    // Create blocks for the first level
+
     createBlocks();
 }
 document.onkeydown = e => {
@@ -82,7 +82,7 @@ function update() {
     }
     context.clearRect(0, 0, board.width, board.height);
 
-    // Adjust difficulty based on level
+
     adjustDifficulty();
 
     // Draw player
@@ -140,19 +140,25 @@ function update() {
 
     // Check if all blocks are cleared (next level)
     if (blockCount == 0) {
+        // console.log("bite bite")  
         score += 100 * blockRows * blockColumns; // Bonus points for clearing the level
-        level++; // Increase level
+        level++;
         //level = Math.min(level, 3); // Limit level to 3
 
+        // bugs to clear
+        // TO DO: (level 1 > level 2) all clear
+        // TO DO: (level 2 > level 3) in this case the game over sequence bites after level 2 and ends the game before level 3 starts
+        // TO DO: (level 3 > end) the game over sequence works if there is only one block on the board (during testing), in case of a standart game with many blocks it won't bite and will go infinete.
         if (level >= 3) {
-            gameOver = true; // Stop the game at level 3 completion
-            context.fillText("You Won: Press 'Space' to Restart", 80, 400);
+            gameOver = true;
             saveScore(localStorage.getItem(CURRENT_USER), 'breakout', score);
+            // console.log("bite bite")
+            context.fillText("You Won: Press 'Space' to Restart", 80, 400);
             return;
         }
         
-        blockCount = 0; // Reset block count for new level
-        createBlocks(); // Create blocks for next level
+        blockCount = 0; 
+        createBlocks(); 
     }
 
     // Display score and level
@@ -210,7 +216,7 @@ function rightCollision(ball, block) {
 }
 
 function createBlocks() {
-    blockArray = []; // Clear blockArray
+    blockArray = []; 
 
     // Adjust the rows and columns based on the current level
     if (level === 1) {
@@ -234,10 +240,10 @@ function createBlocks() {
                 break: false
             };
 
-            // Create a pattern for level 3 (unbreakable blocks)
+            // Create a pattern for level 3 
             if (level === 3) {
                 if (Math.random() < 0.3) {
-                    block.break = true; // Some blocks are unbreakable
+                    block.break = true; 
                 }
             }
 

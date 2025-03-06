@@ -127,7 +127,7 @@ const generateWord = (optionValue) => {
   let displayItem = chosenWord
   .split("")
   .map(() => '<span class="dashes">_</span>')
-  .join(" "); // Adding space between underscores
+  .join(" ");
 
   userInputSection.innerHTML = displayItem;
 };
@@ -157,7 +157,7 @@ const initializer = () => {
             dashes[index].innerText = char;
             winCount += 1;
             if (winCount == charArray.length) {
-              resultText.innerHTML = `<h2 class='win-msg'>You Win!!</h2><p>The word was <span>${chosenWord}</span></p>`;
+              resultText.innerHTML = `<h2 class='win-msg'>You Win!!</h2><p>The word was <span>${chosenWord}</span></p><p>+1 Score<p/>`;
               score++;
               saveScore(localStorage.getItem(CURRENT_USER), 'hangman', score);
               blocker();
