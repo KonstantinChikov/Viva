@@ -50,7 +50,7 @@ let blockY = 45;
 // Score and game state
 let score = 0;
 let gameOver = false;
-let level = 1; 
+let level = 3; 
 
 window.onload = function() {
     board = document.getElementById("board");
@@ -138,18 +138,28 @@ function update() {
         }
     }
 
+    console.log("Current blockCount:", blockCount);
     // Check if all blocks are cleared (next level)
     if (blockCount == 0) {
-        // console.log("bite bite")  
+        console.log("bite bite")  
         score += 100 * blockRows * blockColumns; // Bonus points for clearing the level
         level++;
         //level = Math.min(level, 3); // Limit level to 3
 
-        // bugs to clear
-        // TO DO: (level 1 > level 2) all clear
-        // TO DO: (level 2 > level 3) in this case the game over sequence bites after level 2 and ends the game before level 3 starts
-        // TO DO: (level 3 > end) the game over sequence works if there is only one block on the board (during testing), in case of a standart game with many blocks it won't bite and will go infinete.
-        if (level >= 3) {
+        // Bugs to Clear
+
+        // TO DO: (level 1 > level 2)No ball is drawn after level one.                   Done!
+
+        // TO DO: (level 2 > level 3)The game makes you win prematurely after level 2.   Done!
+
+        // TO DO: (level 3 > end)    The game over sequence works if there is only one block on the board (during quick testing), 
+        // in case of a standart game with many blocks it won't bite and will go infinite.
+        // The problem is due to making some of the blocks invisible to make the pattern (this could be fould on line 250), 
+        // they are still counted in blockCount, but they never could be seen or brocken.
+        // This means blockCount never reaches 0 and never entering the if (the same if these commets are in). 
+        // On line 141 there is a console block counter that made the bug visible.
+
+        if (level > 3) {
             gameOver = true;
             saveScore(localStorage.getItem(CURRENT_USER), 'breakout', score);
             // console.log("bite bite")
@@ -237,7 +247,8 @@ function createBlocks() {
                 y: blockY + r * blockHeight + r * 10,
                 width: blockWidth,
                 height: blockHeight,
-                break: false
+                break: false,
+                
             };
 
             // Create a pattern for level 3 
@@ -272,16 +283,16 @@ function resetGame() {
         height: playerHeight,
         velocityX: playerVelocityX
     };
-    ball = {
-        x: boardWidth / 2,
-        y: boardHeight / 2,
-        width: ballWidth,
-        height: ballHeight,
-        velocityX: ballVelocityX = 2,
-        velocityY: ballVelocityY = 2
-    };
-    blockArray = [];
-    blockRows = 3;
+    // ball = {
+    //     x: boardWidth / 2,
+    //     y: boardHeight / 2,
+    //     width: ballWidth,
+    //     height: ballHeight,
+    //     velocityX: ballVelocityX = 2,
+    //     velocityY: ballVelocityY = 2
+    // };
+    // blockArray = [];
+    // blockRows = 3;
     score = 0;
     level = 1; // Reset level to 1
     createBlocks();
@@ -296,4 +307,3 @@ function adjustDifficulty() {
         ball.velocityY = ball.velocityY > 0 ? 2 : -2;
     }
 }
-
