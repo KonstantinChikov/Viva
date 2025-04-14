@@ -6,6 +6,7 @@
     <title>Viva Game Portal</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="../Images/joystick.png" type="image/png">
+    <audio id="music" src="" autoplay loop></audio>
 </head>
 <body>
 
@@ -13,81 +14,114 @@
         <a href="../ScorePage/index.html" class="icon-container">
             <img src="../Images/mainScore.png" alt="Comment Icon" class="iconS">
         </a>
+        <a href="../LikedPage/index.html" class="icon-containerA">
+            <img src="../Images/hearts.png" alt="Comment Icon" class="iconL">
+        </a>
+
         <h1>Welcome to Viva Game Portal</h1>
+    
+        <!-- <a href="../SettingsPage/Index.html" class="icon-container" id="work">
+            <img src="../Images/settings.png" alt="User Icon" class="iconSt">
+        </a> -->
         <a href="../LogOutPage/index.html" class="icon-container" id="work">
             <img src="../Images/logout.png" alt="User Icon" class="iconP">
         </a>
     </nav>
 
-    <!-- Grid container with 16 grid items. 12 of whitch are used and 4 commented -->
+
+     
     <div class="grid-container">
-        <div class="grid-item" onclick="window.location.href='../Games/MemoryCards/memoryCards.html'">
-            <img src="../Images/card-games.png" alt="Game 1">
-            <p>Memory Cards</p>
+
+        <div class="grid-item-wrapper">
+            <button class="heart-button">🤍</button> 
+            <div class="grid-item" onclick="window.location.href='../Games/MemoryCards/memoryCards.html'">
+                <img src="../Images/card-games.png" alt="Game 1">
+                <p>Memory Cards</p>
+            </div>
         </div>
-        <div class="grid-item" onclick="window.location.href='../Games/Snake/Snake.html'">
-            <img src="../Images/snakeScore.png" alt="Game 2">
-            <p>Snake</p>
+        <div class="grid-item-wrapper">
+            <button class="heart-button">🤍</button> 
+            <div class="grid-item" onclick="window.location.href='../Games/Snake/Snake.html'">
+                <img src="../Images/snakeScore.png" alt="Game 2">
+                <p>Snake</p>
+            </div>
         </div>
-        <div class="grid-item" onclick="window.location.href='../Games/TicTacToe/TicTacToe.html'">
-            <img src="../Images/tic-tac-toe.png" alt="Game 3">
-            <p>Tic Tac Toe</p>
+        <div class="grid-item-wrapper">
+            <button class="heart-button">🤍</button> 
+            <div class="grid-item" onclick="window.location.href='../Games/TicTacToe/TicTacToe.html'">
+                <img src="../Images/tic-tac-toe.png" alt="Game 3">
+                <p>Tic Tac Toe</p>
+            </div>
         </div>
-        <div class="grid-item" onclick="window.location.href='../Games/DrumKit/index.html'">
-            <img src="../Images/drum.png" alt="Game 4">
-            <p>Drum Kit</p>
+        <div class="grid-item-wrapper">
+            <button class="heart-button">🤍</button> 
+            <div class="grid-item" onclick="window.location.href='../Games/DrumKit/index.html'">
+                <img src="../Images/drum.png" alt="Game 4">
+                <p>Drum Kit</p>
+            </div>
         </div>
-        <div class="grid-item" onclick="window.location.href='../Games/HangMan/index.html'">
-            <img src="../Images/hangman.png" alt="Game 5">
-            <p>Hang Man</p>
+        <div class="grid-item-wrapper">
+            <button class="heart-button">🤍</button> 
+            <div class="grid-item" onclick="window.location.href='../Games/HangMan/index.html'">
+                <img src="../Images/hangman.png" alt="Game 5">
+                <p>Hang Man</p>
+            </div>
         </div>
-        <div class="grid-item" onclick="window.location.href='../Games/RockPaperScissors/RPS.html'">
-            <img src="../Images/rock-paper-scissors.png" alt="Game 6">
-            <p>Rock, Paper, Scissors</p>
+        <div class="grid-item-wrapper">
+            <button class="heart-button">🤍</button> 
+            <div class="grid-item" onclick="window.location.href='../Games/RockPaperScissors/RPS.html'">
+                <img src="../Images/rock-paper-scissors.png" alt="Game 6">
+                <p>Rock, Paper, Scissors</p>
+            </div>
         </div>
-        <div class="grid-item" onclick="window.location.href='../Games/WackAMole/index.html'">
-            <img src="../Images/whack-a-mole.png" alt="Game 7">
-            <p>Wack A Mole</p>
+        <div class="grid-item-wrapper">
+            <button class="heart-button">🤍</button> 
+            <div class="grid-item" onclick="window.location.href='../Games/WackAMole/index.html'">
+                <img src="../Images/whack-a-mole.png" alt="Game 7">
+                <p>Wack A Mole</p>
+            </div>
         </div>
-        <div class="grid-item" onclick="window.location.href='../Games/PingPong/pingPong.html'">
-            <img src="../Images/ping-pong.png" alt="Game 8">
-            <p>Ping Pong</p>
+        <div class="grid-item-wrapper">
+            <button class="heart-button">🤍</button> 
+            <div class="grid-item" onclick="window.location.href='../Games/PingPong/pingPong.html'">
+                <img src="../Images/ping-pong.png" alt="Game 8">
+                <p>Ping Pong</p>
+            </div>
         </div>
-        <div class="grid-item" onclick="window.location.href='../Games/GoodOrBad/GoodOrBad.html'">
-            <img src="../Images/goodORbad.png" alt="Game 9">
-            <p>Noble & Scoundrel</p>
+        <div class="grid-item-wrapper">
+            <button class="heart-button">🤍</button> 
+            <div class="grid-item" onclick="window.location.href='../Games/GoodOrBad/GoodOrBad.html'">
+                <img src="../Images/goodORbad.png" alt="Game 9">
+                <p>Noble & Scoundrel</p>
+            </div>
         </div>
-        <div class="grid-item" onclick="window.location.href='../Games/BreakOut/index.html'">
-            <img src="../Images/breakout.png" alt="Game 10">
-            <p>Break Out</p>
+        <div class="grid-item-wrapper">
+            <button class="heart-button">🤍</button> 
+            <div class="grid-item" onclick="window.location.href='../Games/BreakOut/index.html'">
+                <img src="../Images/breakout.png" alt="Game 10">
+                <p>Break Out</p>
+            </div>
         </div>
-        <div class="grid-item" onclick="window.location.href='../Games/SimonSays/index.html'">
-            <img src="../Images/simon.png" alt="Game 11">
-            <p>Simon Says</p>
+        <div class="grid-item-wrapper">
+            <button class="heart-button">🤍</button> 
+            <div class="grid-item" onclick="window.location.href='../Games/SimonSays/index.html'">
+                <img src="../Images/simon.png" alt="Game 11">
+                <p>Simon Says</p>
+            </div>
         </div>
-        <div class="grid-item" onclick="window.location.href='../Games/JigsawPuzzle/index.html'">
-            <img src="../Images/puzzle.png" alt="Game 12">
-            <p>Jigsaw Puzzle</p>
+        <div class="grid-item-wrapper">
+            <button class="heart-button">🤍</button> 
+            <div class="grid-item" onclick="window.location.href='../Games/JigsawPuzzle/index.html'">
+                <img src="../Images/puzzle.png" alt="Game 12">
+                <p>Jigsaw Puzzle</p>
+            </div>
         </div>
-        <!-- <div class="grid-item">
-            <img src=" " alt="Game 13">
-            <p>Game Title 13</p>
-        </div>
-        <div class="grid-item">
-            <img src=" " alt="Game 14">
-            <p>Game Title 14</p>
-        </div>
-        <div class="grid-item">
-            <img src=" " alt="Game 15">
-            <p>Game Title 15</p>
-        </div>
-        <div class="grid-item">
-            <img src=" " alt="Game 16">
-            <p>Game Title 16</p> -->
-        </div>
+        
     </div>
 
     <script type="module" src="scripts/index.js" defer></script>
+
 </body>
 </html>
+
 

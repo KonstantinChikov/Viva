@@ -6,6 +6,7 @@ body {
     /* background-size: cover; */
     /* background-repeat: no-repeat; */
     padding: 20px;
+    cursor: url('../../Images/darkBuleCursor.png'), default;
 }
 
 #title {
@@ -22,6 +23,7 @@ body {
     display: inline-block;
     width: 60%;
     margin: 0 auto;
+    cursor: url('../../Images/darkBuleCursor.png'), default;
 }
 
 #message {
@@ -70,6 +72,7 @@ body {
 .cell:hover {
     background-color: #d9d9d9;
     transform: scale(1.05);
+    cursor: url('../../Images/aim.png'), default;
 }
 
 .cell.X {
@@ -118,6 +121,7 @@ body {
 
 #new-game:hover, #back:hover {
     background-color: #470303;
+    cursor: url('../../Images/clickHover.png'), default;
 }
 
 #new-game:focus, #back:focus {

@@ -76,7 +76,7 @@ export function existsByUsername(username) {
 async function hashPassword(password) {
     const encoder = new TextEncoder();
     const data = encoder.encode(password);
-    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+    const hashBuffer = await crypto.subtle.digest("SHA-256", data); // Hashing the password using Web Crypto API by World Wide Web Consortium (W3C)
 
     // Convert hash to hex string
     return Array.from(new Uint8Array(hashBuffer))

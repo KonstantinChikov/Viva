@@ -16,6 +16,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     /* cursor: url('../Images/cursor.png'), default; */
+    cursor: url('../Images/darkBuleCursor.png'), default;
 
 }
 a{

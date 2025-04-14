@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(orange, #10b5d9);
     background-repeat: no-repeat;
-    cursor: url('../Images/cursor.png'), default;
+    cursor: url('../Images/darkBuleCursor.png'), default;
 }
 
 .navbar {
@@ -21,7 +21,16 @@ body {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    cursor: url('../Images/cursor.png'), default;
+    cursor: url('../Images/darkBuleCursor.png'), default;
+}
+.icon-containerA {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    cursor: url('../Images/darkBuleCursor.png'), default;
+    padding-right: 65%;
+    padding-top: 0.5%;
 }
 
 .icon-container:first-child {
@@ -42,6 +51,19 @@ body {
     height: 50px;
     cursor: url('../Images/clickHover.png'), default;
 }
+.iconL {
+    width: 60px;
+    height: 60px;
+    
+    cursor: url('../Images/clickHover.png'), default;
+}
+.iconSt {
+    width: 60px;
+    height: 60px;
+    padding-left: 800%;
+    cursor: url('../Images/clickHover.png'), default;
+}
+
 
 h1 {
     color: white;
@@ -66,6 +88,7 @@ h1 {
     text-align: center;
     padding: 20px;
     margin: 50px;
+    margin-top: 10px;
     cursor: url('../Images/cursor.png'), default;
     font-family: "Arvo", cursive;
 }
@@ -80,3 +103,24 @@ h1 {
     cursor: url('../Images/clickHover.png'), default;
 }
 
+.heart-button {
+    display: block;
+    margin: 1px auto; 
+    font-size: 30px;   
+    background: none;
+    border: none;
+    color: #ccc;       
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding-left: 5px;     
+}
+
+
+.heart-button:hover {
+    cursor: url('../Images/clickHover.png'), default;
+
+}
+
+.grid-item-wrapper{
+
+}
