@@ -1,8 +1,17 @@
 const CURRENT_USER = 'current-user';
 
+export function removeElementFromArrayOnce(array, element) {
+    const index = array.indexOf(element);
+    if (index > -1) { // only splice array when item is found
+        array.splice(index, 1); // 2nd parameter means remove one item only
+    }
+
+    return array;
+}
+
 export async function register(email, username, password) {
     const hashedPass = await hashPassword(password);
-    localStorage.setItem(email, JSON.stringify({ email: email, username: username, password: hashedPass }));
+    localStorage.setItem(email, JSON.stringify({ email: email, username: username, password: hashedPass, likedGames: [] }));
     localStorage.setItem(CURRENT_USER, email);
 }
 
