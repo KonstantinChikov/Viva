@@ -42,7 +42,7 @@ button:hover{
 }
 
 table{
-    width: 98%; 
+    width: 99.5%; 
     table-layout: fixed; 
 }
 thead,
@@ -55,7 +55,9 @@ td {
     background-color: aliceblue;
     border: 3px solid #03323e;
     border-collapse: collapse;
-    padding: 20px;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 30px;
     vertical-align: middle;
     text-align: center;
     font-family: "Arvo", cursive;

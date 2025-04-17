@@ -1,5 +1,6 @@
 import { CURRENT_USER, isLoggedIn, removeElementFromArrayOnce } from './util.js'
 
+
 function redirect() {
     if (isLoggedIn()) {
         return;
@@ -9,6 +10,8 @@ function redirect() {
 }
 
 redirect();
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // when page loads, get all heart buttons, and the current user
@@ -48,9 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
     gridItems.forEach(item => {
         item.addEventListener('click', () => {
             const link = item.getAttribute('data-link');
-            if (link) {
-                // da go eba
+            if (link) { 
             }
         });
     });
 });
+
