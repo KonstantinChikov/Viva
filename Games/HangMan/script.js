@@ -9,7 +9,7 @@ const canvas = document.getElementById("canvas");
 const resultText = document.getElementById("result-text");
 
 let options = {
-  fruits: [
+  /*fruits*/Плодове: [
     "Apple",
     "Blueberry",
     "Orange",
@@ -27,7 +27,7 @@ let options = {
     "Lime",
     "Lemon"
   ],
-  animals: [
+  /*animals*/Животни: [
     "Hedgehog", 
     "Rhinoceros", 
     "Squirrel", 
@@ -45,7 +45,7 @@ let options = {
     "Hornet",
     "Monkey"
   ],
-  countries: [
+  /*countries*/Държави: [
     "India",
     "Hungary",
     "Kyrgyzstan",
@@ -84,7 +84,10 @@ let score = 0;
 let chosenWord = "";
 
 const displayOptions = () => {
-  optionsContainer.innerHTML += `<h3>Please Select An Option</h3>`;
+
+  // optionsContainer.innerHTML += `<h3>Please Select An Option</h3>`;
+  optionsContainer.innerHTML += `<h3>Моля изберете опция</h3>`;
+
   let buttonCon = document.createElement("div");
   for (let value in options) {
     // buttonCon.innerHTML += `<button class="options">${value}</button>`;
@@ -160,7 +163,7 @@ const initializer = () => {
             dashes[index].innerText = char;
             winCount += 1;
             if (winCount == charArray.length) {
-              resultText.innerHTML = `<h2 class='win-msg'>You Win!!</h2><p>The word was <span>${chosenWord}</span></p><p>+1 Score<p/>`;
+              resultText.innerHTML =/* `<h2 class='win-msg'>You Win!!</h2><p>The word was <span>${chosenWord}</span></p><p>+1 Score<p/>` */ `<h2 class='win-msg'>Ти Печелиш!!</h2><p>Думата Беше <span>${chosenWord}</span></p><p>+1 Резултат<p/>` ;
               score++;
               saveScore(localStorage.getItem(CURRENT_USER), 'hangman', score);
               blocker();
@@ -171,7 +174,7 @@ const initializer = () => {
         count += 1;
         drawMan(count);
         if (count == 6) {
-          resultText.innerHTML = `<h2 class='lose-msg'>You Lose!!</h2><p>The word was <span>${chosenWord}</span></p>`;
+          resultText.innerHTML =/* `<h2 class='lose-msg'>You Lose!!</h2><p>The word was <span>${chosenWord}</span></p>` */ `<h2 class='lose-msg'>Ти Губиш!!</h2><p>Думата Беше <span>${chosenWord}</span></p>`;
           blocker();
         }
       }

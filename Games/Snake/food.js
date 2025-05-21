@@ -14,7 +14,7 @@ export function update() {
     food = getRandomFoodPosition();
     score++;
   }
-  scoreElement.innerHTML = `${filler} Score: ${score}`;
+  scoreElement.innerHTML = /* `${filler} Score: ${score}` */`${filler} Резултат: ${score}`;
 }
 
 export function draw(gameBoard) {

@@ -37,7 +37,7 @@ function checkAnswer(currentLevel) {
     } else {
       playSound("wrong");
       $("body").addClass("game-over");
-      $("#level-title").text("Game Over, Press Any Key to Restart");
+      $("#level-title").text(/*"Game Over, Press Any Key to Restart"*/ "Играта Приклячи, Натиснете Бутон От Клавиетурата За Рестарт");
 
       setTimeout(function () {
         $("body").removeClass("game-over");
@@ -51,7 +51,7 @@ function checkAnswer(currentLevel) {
 function nextSequence() {
   userClickedPattern = [];
   level++;
-  $("#level-title").text("Level " + level);
+  $("#level-title").text(/*"Level "*/"Ниво " + level);
   var randomNumber = Math.floor(Math.random() * 4);
   var randomChosenColour = buttonColours[randomNumber];
   gamePattern.push(randomChosenColour);

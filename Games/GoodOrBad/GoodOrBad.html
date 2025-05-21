@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="style.css">
         <link rel="icon" href="../../Images/goodORbad.png" type="image/png">
 
-        <title>Noble and Scoundrel</title>
+        <title> Noble and Scoundrel </title>
 
              <!-- Sound effects -->
             <audio id="correctSound" src="Sounds/Correct.mp3"></audio>
@@ -16,62 +16,68 @@
     </head>
 
     <body>
-        <h1>The Noble and Scoundrel island</h1>
+        <h1> <!-- The Noble and Scoundrel island! --> Островът на блародниците и негодниците!</h1>
 
         <p id="con">   
-            On the island of nobles and scoundrels, the following facts are true:
+           <!-- On the island of nobles and scoundrels, the following facts are true:
             1. The noble always tells the truth.
             2. The scoundrel always tells a lie.
             3. Every inhabitant of the island is either a noble or a scoundrel.
-            You land on this island and meet three people: Atlas, Basil and Crystal
+            You land on this island and meet three people: Atlas, Basil and Crystal -->
+            На острова на благородниците и негодниците са верни следните факти:
+            1. Благородникът винаги казва истината.
+            2. Негодникът винаги лъже.
+            3. Всеки жител на острова е или благородник, или негодник.
+            Пристигате на този остров и срещате трима души: Александър, Борис и Васил, трябва да разберете какъв е всеки?
+
         </p>
 
-        <p id="replace-me">Ask A: "Are you a Noble or a Scoundrel?"</p>
+        <p id="replace-me"> <!-- Ask Atlas: "Are you a Noble or a Scoundrel?" --> Питате Атлас: "Ти благородник или негодник си?" </p>
         
-        <button id="askA" onclick="changeTextOne()">Ask Atlas</button>
-        <button id="askB" onclick="changeTextTwo()">Ask Basil</button>
-        <button id="askC" onclick="changeTextThree()">Ask Crystal</button>
-        <button id="revealAnswer">Give Answer</button>
+        <button id="askA" onclick="changeTextOne()"> <!-- Ask Atlas --> Попитайте Александър </button>
+        <button id="askB" onclick="changeTextTwo()"> <!-- Ask Basil --> Попитайте Борис</button>
+        <button id="askC" onclick="changeTextThree()"> <!-- Ask Crystal --> Попитайте Васил</button>
+        <button id="revealAnswer"> <!-- Give Answer --> Подсказка или Отговор</button>
 
         <div id="tryA">
-            <label >What is Atlas:</label>
+            <label > <!-- What is Atlas: --> Какъв е Александър: </label>
             <input 
                 type="text" 
                 id="txtFieldA" 
                 required maxlength="20"
                 size="25"
             >
-            <button id="check" onclick="checkStringA()">Check</button>
+            <button id="check" onclick="checkStringA()"> <!-- Check --> Провери</button>
             <p id="resultA"></p>
         </div> 
 
         <div id="tryB">
-            <label >What is Basil:</label>
+            <label > <!-- What is Basil: --> Какъв е Борис</label>
             <input 
                 type="text" 
                 id="txtFieldB" 
                 required maxlength="20"
                 size="25"
             >
-            <button id="check" onclick="checkStringB()">Check</button>
+            <button id="check" onclick="checkStringB()"> <!-- Check --> Провери</button>
             <p id="resultB"></p>
         </div> 
 
         <div id="tryC">
-            <label >What is Crystal:</label>
+            <label > <!-- What is Crystal: --> Какъв е Васил</label>
             <input 
                 type="text" 
                 id="txtFieldC" 
                 required maxlength="20"
                 size="25"
             >
-            <button id="check" onclick="checkStringC()">Check</button>
+            <button id="check" onclick="checkStringC()"> <!-- Check --> Провери</button>
             <p id="resultC"></p>
         </div> 
 
         <p id="answer">...</p>
 
-        <button type="button" onclick="window.location.href='../../MainPage/Index.html'">Main Menu</button>
+        <button type="button" onclick="window.location.href='../../MainPage/Index.html'"> <!-- Main Menu --> Връщане</button>
 
         <script src="script.js"></script>
     </body>

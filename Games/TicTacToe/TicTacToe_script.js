@@ -29,14 +29,14 @@ function handleCellClick(e) {
 
     if (checkWin(currentPlayer)) {
         gameOver = true;
-        message.textContent = `Player ${currentPlayer} wins!`;
+        message.textContent = /* `Player ${currentPlayer} wins!` */ `Играч ${currentPlayer} Печели!`;
         highlightWinningCells(currentPlayer);
     } else if (gameBoard.every((cell) => cell !== "")) {
         gameOver = true;
-        message.textContent = "It's a draw!";
+        message.textContent = /* "It's a draw!" */ "Равенство";
     } else {
         currentPlayer = currentPlayer === "X" ? "O" : "X";
-        message.textContent = `Player ${currentPlayer}'s turn`;
+        message.textContent =/* `Player ${currentPlayer}'s turn`*/ `Ред на ${currentPlayer}`;
     }
 }
 

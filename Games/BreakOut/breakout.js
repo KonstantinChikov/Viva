@@ -112,8 +112,13 @@ function update() {
     }
     // Ball hits the bottom of the screen (game over)
     else if (ball.y + ball.height >= boardHeight) {
-        context.font = "25px Arial sans-serif";
-        context.fillText("Game Over: Press 'Space' to Restart", 80, 400);
+
+        // context.font = "25px Arial sans-serif";
+        // context.fillText("Game Over: Press 'Space' to Restart", 80, 400);       // English versian
+
+        context.font = "20px Arial sans-serif";
+        context.fillText("ИЗГУБИХТЕ: Натиснете Спайс, за да продължите", 45, 400); // Bulgarian versian
+
         gameOver = true;
     }
 
@@ -146,7 +151,11 @@ function update() {
         if (level > 3) {
             gameOver = true;
             saveScore(localStorage.getItem(CURRENT_USER), 'breakout', score);
-            context.fillText("YOU WON: Press 'Space' to start a new game", 50, 400);
+
+            // context.fillText("YOU WON: Press 'Space' to start a new game", 50, 400);     // English versian
+
+            context.fillText("ВИЕ СПЕЧЕЛИХТЕ: Натиснете Спайс за да продължите", 50, 400);  // Bulgarian versian
+
             return;
         }
         
@@ -156,8 +165,11 @@ function update() {
 
     // Display score and level
     context.font = "20px sans-serif";
-    context.fillText("Score: " + score, 10, 25);
-    context.fillText("Level: " + level, board.width - 100, 25);
+    // context.fillText("Score: " + score, 10, 25);
+    context.fillText("Резултат: " + score, 10, 25);
+    // context.fillText("Level: " + level, board.width - 100, 25);
+    context.fillText("Ниво: " + level, board.width - 100, 25);
+
 }
 
 function movePlayer(e) {
